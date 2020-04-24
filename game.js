@@ -15,19 +15,19 @@ const tweetDivided = document.getElementById("tweet");
 var count = 0;
 var proportion;
 function move() {
-	ctx.clearRect(0, 0, 800, 250);
+	ctx.clearRect(0, 0, 300, 250);
 	count++;
 	count %= 75;
 	// proportion: 電源ボタンの割合(0〜1)
 	proportion = (Math.cos(2 * count * Math.PI / 75) + 1) / 2;
 	ctx.beginPath();
-	ctx.moveTo(400, proportion * 40 + (1 - proportion) * 20);
-	ctx.lineTo(400, proportion * 115 + (1 - proportion) * 60);
+	ctx.moveTo(150, proportion * 40 + (1 - proportion) * 20);
+	ctx.lineTo(150, proportion * 115 + (1 - proportion) * 60);
 	ctx.stroke();
 	ctx.beginPath();
 	var argStart = proportion * (-7 * Math.PI / 18) + (1 - proportion) * (-Math.PI / 2);
 	var argEnd = proportion * (-11 * Math.PI / 18) + (1 - proportion) * (-Math.PI / 2);
-	ctx.arc(400, 130, 70, argStart, argEnd);
+	ctx.arc(150, 130, 70, argStart, argEnd);
 	ctx.stroke();
 }
 var interval = setInterval(move, 10);
